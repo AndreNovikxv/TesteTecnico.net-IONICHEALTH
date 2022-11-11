@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MyFirstApp.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Personagens</h1>
+
+<p>
+    <a class="btn btn-danger" asp-action="Create">Criar Personagem</a>
+</p>
+<div class="table">
+    <table class="table" id="table-personagens">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categoria.Descricao)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria.Descricao)
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        <a class="btn btn-primary" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
