@@ -11,7 +11,7 @@ namespace MyFirstApp.Models
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      optionsBuilder.UseSqlServer(connectionString: @"Server=./;Database=Db_Nerdflix;User Id=Andre;Password=nemecz;Integrated Security=False");
+      optionsBuilder.UseSqlServer(connectionString: @"Server=./;Database=Db_Nerdflix;User Id=Andre;Password=n*****;Integrated Security=False");
     }
   }
 }
